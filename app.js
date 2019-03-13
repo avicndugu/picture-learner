@@ -12,7 +12,7 @@ function loadData(){
 			// console.log(this.responseText);
 			const dictionary=JSON.parse(this.responseText);	
 			const output= `
-				<p>${dictionary[n].name}</p>
+				<h2 class="title">${dictionary[n].name}</h2>
 				<img src="img/${dictionary[n].url}">
 				`;
 			console.log(dictionary.length);

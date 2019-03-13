@@ -1,16 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>JSON AND AJAX</title>
+	<title>Picture learner</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="Free Web tutorials">
+	<meta name="keywords" content="Picture learning">
+	<meta name="Avic Ndugu" content="A simple web app that helps you learn the names of common things in different languages like English, Swahili and German.">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<link rel="stylesheet" type="text/css" href="bulma.min.css">
 </head>
 <body>
-	<div class="containers">
-		<button id="first-subject">Customer</button>
-		<!-- <button id="previous">Customers</button> -->
-		<!-- <button id="next">Customers</button> -->
-		<div id="subject"></div>
-		<!-- <div id="customers"></div> -->
-	</div>
+	<section class="section">
+		<div class="container">
+			<div id="header">
+				<h1 id="logo" class="title">Picture learner</h1>
+				<h2 class="subtitle">Learn through image</h2>
+			</div>
+			<div class="containers">
+				<div id="subject" class="first-view"></div>
+				<!-- <button id="BUTTON">BUTTON</button> -->
+				<button id="first-subject" class="button">START</button>
+				<button id="exit" class="first-view button">EXIT</button>
+			</div>
+		</div>
+	</section>
+	<script type="text/javascript" src="views.js"></script>
 	<script type="text/javascript" src="app.js"></script>
 </body>
 </html>
