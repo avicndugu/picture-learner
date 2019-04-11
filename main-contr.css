@@ -4,6 +4,8 @@
 
 #app-container {
 	background-color: #fdfdfd;
+	/*padding-top: 15px;*/
+	padding-bottom:15px;
 }
 
 body{
