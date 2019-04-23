@@ -53,7 +53,7 @@ function secondView(){
         submit.style.display="inline-block";
         subject.style.display="inline-block";
         exit.style.display="inline-block";
-        console.log(state);
+        // console.log(state);
     // }
 
     // if (firstSubject.textContent==='START'){
@@ -80,30 +80,48 @@ function helpView(){
 // Second view has the name of the object the image below it and the next button.
 const next=document.getElementById('first-subject');
 next.addEventListener('click', function(){
+    // VIEWS CODE
     secondView();
-    // 
-
+    contribution.style.display="block";
+    // BUSINESS LOGIC
+    language.focus();
+    console.log(newLang);
+    if (newLang==true) {
+        setLang(document.langName.language.value);
+        newLang=false;
+    }
 });
+// document.getElementById("language").addEventListener('focusout', function(){
+//     setLang(document.langName.language.value);
+// });
+
 
 other.addEventListener("click",function(){
         contribution.style.display="block";
         languages.style.display="none";
         nav.style.display="block";
         console.log(document.langName.language.value.length);
-        setLang(document.langName.language.value.length);
+        langName.reset();
+        newLang=true;
+        language.focus();
+        // setLang(document.langName.language.value);
+        
 });
 english.addEventListener("click",function(){
     state=1;
+    setLang("English");
+    langName.reset();
     languages.style.display="none";
     nav.style.display="block";
     // secondView();
-    newDict["language"]=setLang(this.innerText);
+    // newDict["language"]=setLang(this.innerText);
     // document.langName.language.value;
     // console.log(setLang(this.innerText));
 });
 
 swahili.addEventListener("click",function(){
     state=1;
+    setLang("Swahili");
     languages.style.display="none";
     nav.style.display="block";
 });

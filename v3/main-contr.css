@@ -1,0 +1,43 @@
+.container {
+	text-align: center;
+}
+
+#app-container {
+	background-color: #fdfdfd;
+	/*padding-top: 15px;*/
+	padding-bottom:15px;
+}
+
+body{
+	background-color: #eeeeee;
+	height:100vh;
+}
+.containers {
+	padding-bottom:20px;
+
+}
+#header h1 {
+	padding:30px 0;
+}
+.button-group {
+	padding-top:10px;
+}
+
+/*#app-container {
+	background:green;
+	width:50%;*/
+/*}*/
+@media only screen and (min-width: 1200px) {
+	#app-container {
+		width:50%;
+		padding-top: 15px;
+		padding-bottom:15px;
+	}
+} 
+/*
+.second-view {
+	display:none;
+}*/
+/*#contribute{
+	display: block;
+}*/

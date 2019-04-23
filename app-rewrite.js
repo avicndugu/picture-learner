@@ -39,21 +39,45 @@ function loadData(){
 	xhr.send();
 }
 
+let newDict={};
+		console.log(typeof(newDict));
+		// newDict["language"]= "Englonish";
+		newDict["items"]=[];
+
+function setLang(language) {
+	console.log(language.length);
+	// 	newDict["language"]= "English";
+	// }
+	 // else if() {
+
+	// } else {
+		newDict["language"]=language;
+		// document.langName.language.value;	
+	// }
+}
+
 function feeder(dictionary) {
 	// pick the name of the language  from input and stores it in an object.
-	let newDict={};
-	newDict["language"]=document.langName.language.value;
+	// let newDict=[];
+		// let newDict={};
+		// console.log(typeof(newDict));
+		// newDict["language"]= "English";
+		// newDict["items"]=[];
+	// document.langName.language.value;
 	console.log(newDict);
 
 	// pick the names of the objects only
 	// newDict["ObjectNames"]=[];
     // console.log(document.langName.language.value.length);
 
-	if (n<dictionary.length-1){
-		newDict[dictionary[n].name]=document.langName.language.value;
-		console.log(newDict);
-		console.log(dictionary[n].name);
+	if (n>0 && n<dictionary.length-1){
+		newDict["items"].push(document.langName.language.value);
+		// newDict[dictionary[n].name]=document.langName.language.value;
+		// console.log(newDict);
+		console.log(newDict["items"]);
+		// console.log(dictionary[n].name);
 	}
+	langName.reset();
 	// Old code that feeds the images
 	const output= `
 		<h2 class="title">${dictionary[n].name}</h2>
