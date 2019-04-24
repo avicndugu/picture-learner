@@ -9,7 +9,7 @@
     <form id="test-form">
         <div>
             <label>Field 1</label>
-            <input type="text" name="language" placeholder="Field 1"/>
+            <input type="text" id="language" name="language" placeholder="Field 1"/>
         </div>
          <div>
             <button type="submit"id="submit-form">Submit</button>
@@ -17,27 +17,42 @@
     </form>
 <script type="text/javascript">
     var myform = document.getElementById('test-form');
+    var language= document.getElementById('language');
+    // language.name("language");
+    console.log(language.name);
 
+    document.getElementById('submit-form').addEventListener('click', function(e) {
+        // alert(1);
+        e.preventDefault();
 
+        // The data collected from the form and stored in an array
+        var data=["ronny", "uou", "yutuyt", "etert", "xersr", "rytryt", "s4esrz", "lutaia", "hitars", "portas"];
+        
+        // Takes the data and encodes it so that it can be parsed as a string on the URL
+        var encodeurl=[];
+        for (i=0; i<data.length; i++) {
+                    encodeurl.push("field"+i +"=" +data[i]);
+        }
+        console.log(encodeurl);
+        var sentData= encodeurl.join("&");
 
- document.getElementById('submit-form').addEventListener('click', function(e) {
-    // alert(1);
-    e.preventDefault();
-    var data=JSON.stringify(myform.language.value);
-    console.log(data);
-    console.log(myform);
-    var url = 'https://script.google.com/macros/s/AKfycbwNHpeIfd5C8nOVBmkbhLw3Y35QPlNAe1zkSQUNIX1ndVNUvyc/exec?language='+data;
-    console.log(url);
+        console.log((sentData));
+        // JSON.stringify(myform.language.value);
+        console.log(data);
+        console.log(myform);
+        var url = 'https://script.google.com/macros/s/AKfycbwNHpeIfd5C8nOVBmkbhLw3Y35QPlNAe1zkSQUNIX1ndVNUvyc/exec?'+sentData;
+        // language='+sentData;
+        console.log(url);
 
-    const xhr=new XMLHttpRequest();
-    xhr.open('GET', url, true);
-    // console.log(GET);
-    xhr.onload= function() {
-        if(this.status===200)
-        console.log(this.responseText);
-    }
-    xhr.send();
- });
+        const xhr=new XMLHttpRequest();
+        xhr.open('GET', url, true);
+        // console.log(GET);
+        xhr.onload= function() {
+            if(this.status===200)
+            console.log(this.responseText);
+        }
+        xhr.send();
+     });
 
 // var $form = $('form#test-form'),
 //     url = 'https://script.google.com/macros/s/AKfycbwNHpeIfd5C8nOVBmkbhLw3Y35QPlNAe1zkSQUNIX1ndVNUvyc/exec'
