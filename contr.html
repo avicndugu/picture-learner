@@ -19,25 +19,27 @@
                 <h2 id="action" class="subtitle">Contribute</h2>
                 <p id="tagline">Help others learn a language through 10 pictures</p>
                 <br>
-
+                <p>Write the name of the language to begin:</p>
             </div>
-            <div class="containers">
+            <div class="containers" id="data"> 
                 <div id="subject" class="first-view"></div>
                 <div id="contribution">
                     <!-- <p>Languages</p> -->
                     <!-- <p>Name</p> -->
                     <form name="langName">
-                        <label>Language:</label>
-                        <input type="text" name="language">
+                        <!-- <label>Language:</label> -->
+                        <input type="text" name="language" id="language">
                     </form>
+                    <!-- <form name="itemName">
+                        <label>Name:</label>
+                        input type="" -->
                 </div>
-                <div class="button-group" id="languages">
-                <p>Choose a language to begin:</p>
+                <!-- <div class="button-group" id="languages">
                     <button class="button" id="english">English</button>
                     <button class="button" id="swahili">Swahili</button>
                     <button class="button" id="other">Other</button>
                     <p id="error-language"></p>
-                </div>
+                </div> -->
                 <div class="button-group" id="navigation">
                     <button id="first-subject" class="button"></button>
                     <button id="exit" class="first-view button">EXIT</button>
@@ -57,6 +59,7 @@
         </div>
     </section>
     <script type="text/javascript" src="views-contr.js"></script>
-    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="app-rewrite.js"></script>
+    <script type="text/javascript" src="input-data.js"></script>
 </body>
 </html>

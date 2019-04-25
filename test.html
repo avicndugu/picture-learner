@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script> -->
+    <!-- <script src="jquery.serialize-object.min.js"></script> -->
+</head>
+<body>
+    <form id="test-form">
+        <div>
+            <label>Field 1</label>
+            <input type="text" id="language" name="language" placeholder="Field 1"/>
+        </div>
+         <div>
+            <button type="submit"id="submit-form">Submit</button>
+        </div>
+    </form>
+<script type="text/javascript">
+    var myform = document.getElementById('test-form');
+    var language= document.getElementById('language');
+    // language.name("language");
+    console.log(language.name);
+
+    document.getElementById('submit-form').addEventListener('click', function(e) {
+        // alert(1);
+        e.preventDefault();
+
+        // The data collected from the form and stored in an array
+        var data=["ronny", "uou", "yutuyt", "etert", "xersr", "rytryt", "s4esrz", "lutaia", "hitars", "portas"];
+        
+        // Takes the data and encodes it so that it can be parsed as a string on the URL
+        var encodeurl=[];
+        for (i=0; i<data.length; i++) {
+                    encodeurl.push("field"+i +"=" +data[i]);
+        }
+        console.log(encodeurl);
+        var sentData= encodeurl.join("&");
+
+        console.log((sentData));
+        // JSON.stringify(myform.language.value);
+        console.log(data);
+        console.log(myform);
+        var url = 'https://script.google.com/macros/s/AKfycbwNHpeIfd5C8nOVBmkbhLw3Y35QPlNAe1zkSQUNIX1ndVNUvyc/exec?'+sentData;
+        // language='+sentData;
+        console.log(url);
+
+        const xhr=new XMLHttpRequest();
+        xhr.open('GET', url, true);
+        // console.log(GET);
+        xhr.onload= function() {
+            if(this.status===200)
+            console.log(this.responseText);
+        }
+        xhr.send();
+     });
+
+// var $form = $('form#test-form'),
+//     url = 'https://script.google.com/macros/s/AKfycbwNHpeIfd5C8nOVBmkbhLw3Y35QPlNAe1zkSQUNIX1ndVNUvyc/exec'
+
+// $('#submit-form').on('click', function(e) {
+//   e.preventDefault();
+//   var jqxhr = $.ajax({
+//     url: url,
+//     method: "GET",
+//     dataType: "json",
+//     data: $form.serializeObject();
+//   });
+//   .success(
+//     // do something
+//   );
+// });
+
+
+
+
+
+
+    // var data =JSON.stringify(["Raker", 2, 65,"Moon"]);
+ 
+    // xhr.send(data);
+// });
+</script>
+</body>
+</html>

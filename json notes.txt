@@ -19,3 +19,6 @@ IDEAL JSON
 	"url":"",
 	"tags":""
 }
+language{
+    "german":"";
+    }

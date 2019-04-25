@@ -29,7 +29,7 @@ function loadData(){
 				}
 			}
 			console.log(n);
-		}
+		}console.log(dictionary);
 	}
 	xhr.send();
 }
