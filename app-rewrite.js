@@ -39,22 +39,22 @@ function loadData(){
 	xhr.send();
 }
 
-let newDict={};
+let newDict=[];
 		console.log(typeof(newDict));
 		// newDict["language"]= "Englonish";
-		newDict["items"]=[];
+		// newDict["items"]=[];
 
-function setLang(language) {
-	console.log(language.length);
-	// 	newDict["language"]= "English";
-	// }
-	 // else if() {
+// function setLang(language) {
+// 	console.log(language.length);
+// 	// 	newDict["language"]= "English";
+// 	// }
+// 	 // else if() {
 
-	// } else {
-		newDict["language"]=language;
-		// document.langName.language.value;	
-	// }
-}
+// 	// } else {
+// 		newDict["language"]=language;
+// 		// document.langName.language.value;	
+// 	// }
+// }
 
 function feeder(dictionary) {
 	// pick the name of the language  from input and stores it in an object.
@@ -70,13 +70,13 @@ function feeder(dictionary) {
 	// newDict["ObjectNames"]=[];
     // console.log(document.langName.language.value.length);
 
-	if (n>0 && n<dictionary.length-1){
-		newDict["items"].push(document.langName.language.value);
+	// if (n>0 && n<dictionary.length-1){
+		newDict.push(document.langName.language.value);
 		// newDict[dictionary[n].name]=document.langName.language.value;
 		// console.log(newDict);
-		console.log(newDict["items"]);
+		console.log(newDict);
 		// console.log(dictionary[n].name);
-	}
+	// }
 	langName.reset();
 	// Old code that feeds the images
 	const output= `
@@ -114,8 +114,8 @@ var myform = document.getElementById('langName');
         
         // Takes the data and encodes it so that it can be parsed as a string on the URL
         var encodeurl=[];
-        for (i=0; i<newDict["items"].length; i++) {
-                    encodeurl.push("field"+i +"=" +newDict["items"][i]);
+        for (i=0; i<newDict.length; i++) {
+                    encodeurl.push("field"+i +"=" +newDict[i]);
         }
         console.log(encodeurl);
         var sentData= encodeurl.join("&");

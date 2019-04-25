@@ -10,12 +10,12 @@ const firstSubject=document.getElementById('first-subject');
 const exit=document.getElementById('exit');
 const contribute=document.getElementById('contribute');
 const contribution= document.getElementById('contribution');
-const languages=document.getElementById("languages");
+// const languages=document.getElementById("languages");
 const notification=document.getElementById("notification");
-const other=document.getElementById("other");
+// const other=document.getElementById("other");
 const submit=document.getElementById("submit");
-const english=document.getElementById("english");
-const swahili=document.getElementById("swahili");
+// const english=document.getElementById("english");
+// const swahili=document.getElementById("swahili");
 const nav=document.getElementById("navigation");
 // document.getElementById('logo').addEventListener('load', firstView);
 console.log(firstSubject.textContent);
@@ -34,10 +34,14 @@ function firstView(){
     firstSubject.textContent="NEXT";
     nav.style.display="none";
     // contribute.style.display="inline-block";
-    languages.style.display="block";
+    // languages.style.display="block";
     contribution.style.display="none";
     notification.style.display="none";
     submit.style.display="none";
+    console.log(document.langName.language.value.length);
+    langName.reset();
+    // newLang=true;
+    language.focus();
 }
 function secondView(){
     // if (state=='undefined') {
@@ -45,7 +49,7 @@ function secondView(){
     //     console.log(state);
     // } else {
         header.style.display="none";
-        languages.style.display="none";
+        // languages.style.display="none";
         // other.style.display="none";
         // action.style.display="none";
         // tagline.style.display="none";
@@ -70,7 +74,7 @@ function secondView(){
     //     // console.log(33);
     // }
 }
-function helpView(){
+function exitView(){
     // subject.style.display="inline-block";   
     // header.style.display="none";
     // contribute.style.display="none";
@@ -86,45 +90,45 @@ next.addEventListener('click', function(){
     // BUSINESS LOGIC
     language.focus();
     // console.log(newLang);
-    if (newLang==true) {
-        setLang(document.langName.language.value);
-        newLang=false;
-    }
+    // if (newLang==true) {
+        // setLang(document.langName.language.value);
+        // newLang=false;
+    // }
 });
 // document.getElementById("language").addEventListener('focusout', function(){
 //     setLang(document.langName.language.value);
 // });
 
 
-other.addEventListener("click",function(){
+// other.addEventListener("click",function(){
         contribution.style.display="block";
-        languages.style.display="none";
+        // languages.style.display="none";
         nav.style.display="block";
         console.log(document.langName.language.value.length);
         langName.reset();
-        newLang=true;
+        // newLang=true;
         language.focus();
         // setLang(document.langName.language.value);
         
-});
-english.addEventListener("click",function(){
-    state=1;
-    setLang("English");
-    langName.reset();
-    languages.style.display="none";
-    nav.style.display="block";
-    // secondView();
-    // newDict["language"]=setLang(this.innerText);
-    // document.langName.language.value;
-    // console.log(setLang(this.innerText));
-});
+// });
+// english.addEventListener("click",function(){
+//     state=1;
+//     setLang("English");
+//     langName.reset();
+//     languages.style.display="none";
+//     nav.style.display="block";
+//     // secondView();
+//     // newDict["language"]=setLang(this.innerText);
+//     // document.langName.language.value;
+//     // console.log(setLang(this.innerText));
+// });
 
-swahili.addEventListener("click",function(){
-    state=1;
-    setLang("Swahili");
-    languages.style.display="none";
-    nav.style.display="block";
-});
+// swahili.addEventListener("click",function(){
+//     state=1;
+//     setLang("Swahili");
+//     languages.style.display="none";
+//     nav.style.display="block";
+// });
 
 exit.addEventListener('click', firstView);
 
