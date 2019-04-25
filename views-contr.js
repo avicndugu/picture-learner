@@ -85,7 +85,7 @@ next.addEventListener('click', function(){
     contribution.style.display="block";
     // BUSINESS LOGIC
     language.focus();
-    console.log(newLang);
+    // console.log(newLang);
     if (newLang==true) {
         setLang(document.langName.language.value);
         newLang=false;
