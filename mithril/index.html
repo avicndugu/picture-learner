@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test mithril</title>
+</head>
+<body>
+    <script src="https://unpkg.com/mithril/mithril.js"></script>
+    <script type="text/javascript">
+        var root=document.body
+
+        var Home = {
+            view: function() {
+                return m("main", [
+                    m("h1","Picture learner"),
+                    m("h2","Learning through pictures"),
+                    m("button","English"),
+                    m("button","Swahili"),
+                    m("button",[
+                        m("a",{href: "#!/contribute"},"Contribute"),
+                        ])
+                ])
+            }
+        }
+
+        var Contribute = {
+            view: function() {
+                return m("main", [
+                    m("h1","Picture learner"),
+                    m("h2","Learning through pictures"),
+                    m("button","English"),
+                    m("button","Swahili"),
+                    m("button",[
+                        m("a",{href: "#!/word"},"Next"),
+                    ]),
+                    m("button",[
+                        m("a",{href: "#!/home"},"Contribute"),
+                    ])
+                ])
+            }
+        }
+
+        var Word = {
+            view: function() {
+                return m("main", [
+                    m("h1","Picture learner"),
+                    m("img",{src:"car.png"}),
+                    m("button","Back"),
+                    m("button","Next"),
+                    m("button",[
+                        m("a",{href: "#!/home"},"Exit"),
+                    ])
+                ])
+            }
+        }
+
+        // }
+        // var count = 0 // added a variable  
+        // var Splash = {
+        //     view: function() {
+        //         return m("main", [
+        //             m("a",{href: "#!/hello"},"Enter!"),
+        //             m("a", {href:"#!/dater"}, "Dater"),
+        //             ])
+        //     }
+        // }
+        
+        // var Hello = {
+        //     view: function() {
+        //         return m("main", [
+        //             m("h1", {class: "title"}, "My first app"),
+        //             m("button", {onclick: increment} , count + " clicks"),
+        //             m("br"),
+        //             m("a",{href: "#!/splash"},"Splash!"),
+        //             m("br"),
+        //             m("button", {onclick: sheets},"docs"),
+        //         ])
+        //     }
+        // }
+
+        // var Dater = {
+        //     view: function(){
+        //         return m("main",[
+        //             m("h1", "This view shows the current date"),
+        //             m("p", "09-05-2019"),
+        //             m("a",{href: "#!/hello"},"Enter!")
+        //             ])
+        //     }
+        // }
+
+        // var increment=function(){
+        //     m.request({
+        //         method:"PUT",
+        //         url: "https://rem-rest-api.herokuapp.com/api/tutorial/1",
+        //         data:{count:count+1},
+        //         withCredentials:true,
+        //     })
+        //     .then(function(data) {
+        //         count = parseInt(data.count)
+        //     })
+        // }
+        // var datalink='https://script.google.com/macros/s/AKfycbwNHpeIfd5C8nOVBmkbhLw3Y35QPlNAe1zkSQUNIX1ndVNUvyc/exec?'+"field2=sentData&field4=sentData";
+        // var sheets= function(){
+        //     m.request({
+        //         method:"GET",
+        //         url:datalink,
+        //         withCredentials:true,
+        //     })
+        //     // .then(function(data) {
+        //         // console.log(data)
+        //     // })
+        // }    
+
+        m.route(root, "/home", {
+            "/home": Home,
+            "/contribute": Contribute,
+            "/word": Word,
+        //     "/splash": Splash,
+        //     "/hello": Hello,
+        //     "/dater": Dater,
+        })
+
+    </script>
+</body>
+</html>
