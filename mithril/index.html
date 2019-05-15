@@ -48,7 +48,12 @@
                     m("button","Next"),
                     m("button",[
                         m("a",{href: "#!/home"},"Exit"),
-                    ])
+                    ]),
+                    // m("p",n),
+                    m("button",{onclick:loadingData},"mama"),
+                        // [
+                        // n,
+                    // ]),
                 ])
             }
         }
@@ -118,6 +123,33 @@
         //     "/hello": Hello,
         //     "/dater": Dater,
         })
+
+    </script>
+    <script type="text/javascript">
+        let n=0;
+// Loads the data from the API/ file
+        function loadingData() {
+            m.request({
+                method:'GET',
+                url:'english.json',
+                withCredentials:true,
+            })
+            .then(function(data){
+                console.log(data);
+                blabla(data);
+            })         
+        }
+// CYCLES Throught the data repetitively
+        function blabla(data){
+            const dictionary=data;
+            var objImageUrl=dictionary[n].url;
+            var objImageName=dictionary[n].name;
+            console.log(objImageUrl);
+            console.log(objImageName);
+            if (n<dictionary.length-1) {
+                n+=1;
+            }
+        }
 
     </script>
 </body>
