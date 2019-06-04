@@ -1,38 +1,44 @@
-document.getElementById("first-subject").addEventListener('click', loadData);
+english.addEventListener('click', function() {
+	loadData('english');
+});
+document.getElementById("first-subject").addEventListener('click', function () {
+	
+});
+swahili.addEventListener('click', function() {
+	loadData('swahili');
+});
 
 
 let n=0;
-function loadData(){
+function loadData(language){
+	console.log(language);
 	const xhr= new XMLHttpRequest();
-	
-	xhr.open('GET','english.json', true);
-
+	xhr.open('GET',language+'.json', true);
 	xhr.onload= function(){
 		if(this.status===200){
-			// console.log(this.responseText);
+			console.log(this.responseText);
 			const dictionary=JSON.parse(this.responseText);	
-			const output= `
-				<h2 class="title">${dictionary[n].name}</h2>
-				<img src="img/${dictionary[n].url}">
-				`;
-			console.log(dictionary.length);
-			cycling();
-			document.getElementById('subject').innerHTML= output;
-			// console.log(output);
-			// Move to the next data set number
-			function cycling(){
-				if (n<dictionary.length-1){
-					n+=1;
-				}else{
-					n=0;
-					console.log(15);
-				}
-			}
-			console.log(n);
-		}console.log(dictionary);
+			dataJump(dictionary);
+		}
 	}
 	xhr.send();
 }
 
-
+function dataJump(dictionary){
+	console.log(dictionary);
+	// Variable containing the display content
+	const output= `
+		<h2 class="title">${dictionary[n].name}</h2>
+		<img src="img/${dictionary[n].url}">
+		`;
+	// Instert it into DOM tree
+	document.getElementById('subject').innerHTML= output;
+	nextItem(dictionary);
+}
+function nextItem(m){
+	if (n<m.length-1){
+		n=n+1;
+	}
+	console.log(n);
+}
 // Next button to nove

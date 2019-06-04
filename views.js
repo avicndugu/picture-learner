@@ -28,19 +28,21 @@ function firstView(){
 	navigation.style.display="none";
 }
 function secondView(){
-	if (firstSubject.textContent==='NEXT'){
-		firstSubject.textContent="NEXT";
+	// if (firstSubject.textContent==='NEXT'){
+		// firstSubject.textContent="NEXT";
 		subject.style.display="inline-block";	
 		header.style.display="none";
 		// contribute.style.display="none";
-		languages.style.display="none";
+		languages.style.display="block";
+		navigation.style.display="block";
 		exit.style.display="inline-block";
+
 		// console.log(22);
-	}
-	else{
+	// }
+	// else{
 		
 		// console.log(33);
-	}
+	// }
 }
 function helpView(){
 	subject.style.display="inline-block";	
@@ -50,17 +52,19 @@ function helpView(){
 
 }
 // Second view has the name of the object the image below it and the next button.
-document.getElementById('first-subject').addEventListener('click', secondView);
+english.addEventListener('click', secondView);
+swahili.addEventListener('click', secondView);
+
 // document.getElementById('contribute').addEventListener('click', helpView);
 // the final view is the same as the previous one but has an exit button.
 english.addEventListener("click", function(){
 	// Choose language
-	navigation.style.display="block";
+	// navigation.style.display="block";
 	// contribute.style.display="none";
 });
 swahili.addEventListener("click", function(){
 	// Choose language
-	navigation.style.display="block";
+	// navigation.style.display="block";
 	// contribute.style.display="none";	
 });
 
