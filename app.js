@@ -30,6 +30,8 @@ function dataJump(dictionary){
 	const output= `
 		<h2 class="title">${dictionary[n].name}</h2>
 		<img src="img/${dictionary[n].url}">
+		<br>
+		<audio controls src="sound/${dictionary[n].audio}"></audio>
 		`;
 	// Instert it into DOM tree
 	document.getElementById('subject').innerHTML= output;

@@ -1,6 +1,7 @@
 [{
 	"name":"phone",
-	"url":"phone.png"
+	"url":"phone.png",
+	"audio":"phone.mp3"
 },
 {
 	"name":"moon",
