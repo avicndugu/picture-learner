@@ -33,7 +33,7 @@ function secondView(){
 		subject.style.display="inline-block";	
 		header.style.display="none";
 		// contribute.style.display="none";
-		languages.style.display="block";
+		languages.style.display="none";
 		navigation.style.display="block";
 		exit.style.display="inline-block";
 

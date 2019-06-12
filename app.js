@@ -1,16 +1,25 @@
+let language;
+let n;
+const next =document.getElementById("first-subject");
+
 english.addEventListener('click', function() {
-	loadData('english');
+	language="english";
+	n=0;
+	loadData();
 });
-document.getElementById("first-subject").addEventListener('click', function () {
-	
+
+next.addEventListener('click', function () {
+	loadData();
 });
+
 swahili.addEventListener('click', function() {
-	loadData('swahili');
+	language="swahili";
+	n=0;
+	loadData();
 });
 
 
-let n=0;
-function loadData(language){
+function loadData(){
 	console.log(language);
 	const xhr= new XMLHttpRequest();
 	xhr.open('GET',language+'.json', true);
@@ -44,3 +53,11 @@ function nextItem(m){
 	console.log(n);
 }
 // Next button to nove
+
+
+// What i want done is this:
+// I want when language button is pressed, it disappears with all the other language buttons
+// it also passes a variable to indicate which language was selected
+// The next and back buttons appear.
+// When the next button is pressed, now the items can be displayed.
+
