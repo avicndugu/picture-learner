@@ -50,6 +50,9 @@ function nextItem(m){
 	if (n<m.length-1){
 		n=n+1;
 	}
+	else{
+		next.style.display="none";
+	}
 	console.log(n);
 }
 // Next button to nove

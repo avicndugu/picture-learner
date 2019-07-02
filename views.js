@@ -28,21 +28,12 @@ function firstView(){
 	navigation.style.display="none";
 }
 function secondView(){
-	// if (firstSubject.textContent==='NEXT'){
-		// firstSubject.textContent="NEXT";
 		subject.style.display="inline-block";	
 		header.style.display="none";
-		// contribute.style.display="none";
 		languages.style.display="none";
 		navigation.style.display="block";
 		exit.style.display="inline-block";
-
-		// console.log(22);
-	// }
-	// else{
-		
-		// console.log(33);
-	// }
+		next.style.display="inline-block";
 }
 function helpView(){
 	subject.style.display="inline-block";	
