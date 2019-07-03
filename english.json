@@ -1,40 +1,50 @@
 [{
 	"name":"phone",
-	"url":"phone.png"
+	"url":"phone.png",
+	"audio":"phone.mp3"
 },
 {
 	"name":"moon",
-	"url":"moon.png"
+	"url":"moon.png",
+	"audio":"moon.mp3"
 },
 {
 	"name":"shoes",
-	"url":"shoes.png"
+	"url":"shoes.png",
+	"audio":"shoes.mp3"
 },
 {
 	"name":"socks",
-	"url":"socks.png"
+	"url":"socks.png",
+	"audio":"socks.mp3"
 },
 {
 	"name":"star",
-	"url":"star.png"
+	"url":"star.png",
+	"audio":"star.mp3"
 },
 {
 	"name":"sun",
-	"url":"sun.png"
+	"url":"sun.png",
+	"audio":"sun.mp3"
 },
 {
 	"name":"bottle",
-	"url":"bottle.png"
+	"url":"bottle.png",
+	"audio":"bottle.mp3"
 },
 {
 	"name":"door",
-	"url":"door.png"
+	"url":"door.png",
+	"audio":"door.mp3"
 },
 {
 	"name":"car",
-	"url":"car.png"
+	"url":"car.png",
+	"audio":"car.mp3"
 },
 {
 	"name":"cup",
-	"url":"cup.png"
+	"url":"cup.png",
+	"audio":"cup.mp3"
 }]

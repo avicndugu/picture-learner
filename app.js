@@ -27,18 +27,21 @@ function loadData(){
 		if(this.status===200){
 			console.log(this.responseText);
 			const dictionary=JSON.parse(this.responseText);	
-			dataJump(dictionary);
+			dataJump(dictionary, language);
 		}
 	}
 	xhr.send();
 }
 
-function dataJump(dictionary){
+function dataJump(dictionary, language){
 	console.log(dictionary);
+	console.log(language);
 	// Variable containing the display content
 	const output= `
 		<h2 class="title">${dictionary[n].name}</h2>
 		<img src="img/${dictionary[n].url}">
+		<br>
+		<audio controls src="sound/${language}/${dictionary[n].audio}"></audio>
 		`;
 	// Instert it into DOM tree
 	document.getElementById('subject').innerHTML= output;
