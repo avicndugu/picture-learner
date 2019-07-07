@@ -42,7 +42,7 @@ function dataJump(dictionary, language){
 	    try {
 	    context = new AudioContext();
 	    request = new XMLHttpRequest();
-	    request.open("GET","/sound/"+ language +"/" + dictionary[n].audio,true);
+	    request.open("GET","https://avicndugu.github.io/picture-learner/sound/"+ language +"/" + dictionary[n].audio,true);
 	    request.responseType = "arraybuffer";
 
 	    request.onload = function() {
