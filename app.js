@@ -36,6 +36,37 @@ function loadData(){
 function dataJump(dictionary, language){
 	console.log(dictionary);
 	console.log(language);
+
+
+	function loadAudio(){
+	    try {
+	    context = new AudioContext();
+	    request = new XMLHttpRequest();
+	    request.open("GET","/sound/"+ language +"/" + dictionary[n].audio,true);
+	    request.responseType = "arraybuffer";
+
+	    request.onload = function() {
+	      context.decodeAudioData(request.response, function(buffer) {
+	        source = context.createBufferSource();  
+	        source.buffer = buffer;
+	        source.connect(context.destination);
+	        // auto play
+	        source.start(0); // start was previously noteOn
+	      });
+	    };
+
+	    request.send();
+
+	    } catch(e) {
+	    alert('web audio api not supported');
+	    }
+	}
+	loadAudio();
+
+
+
+
+
 	// Variable containing the display content
 	const output= `
 		<h2 class="title">${dictionary[n].name}</h2>
