@@ -3,11 +3,11 @@
 }
 
 #app-container {
-	background-color: #fdfdfd;
+	/*background-color: #fdfdfd;*/
 }
 
-body{
-	background-color: #eeeeee;
+body, html{
+	/*background-color: #eeeeee;*/
 	height:100vh;
 }
 .containers {
