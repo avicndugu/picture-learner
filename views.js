@@ -11,6 +11,8 @@ const english = document.getElementById('english');
 // document.getElementById('logo').addEventListener('load', firstView);
 const resume = document.getElementById("resume");
 const player = document.getElementById("player");
+const sounds = document.getElementById("sounds");
+
 exit.addEventListener('click', firstView);
 console.log(firstSubject.textContent);
 
