@@ -18,6 +18,17 @@ swahili.addEventListener('click', function() {
 	loadData();
 });
 
+resume.addEventListener('click', function(){
+	if (!language){
+		// Do nothing since it is hidden or if visible, modal to choose a language.
+	}
+	else {
+		secondView();
+		loadData();
+	}	
+})
+
+
 
 function loadData(){
 	console.log(language);
@@ -64,6 +75,13 @@ function dataJump(dictionary, language){
 	loadAudio();
 
 
+/*
+
+source.pause();
+source.currentTime = 0;
+
+
+*/
 
 
 
