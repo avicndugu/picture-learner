@@ -10,6 +10,7 @@ english.addEventListener('click', function() {
 
 next.addEventListener('click', function () {
 	loadData();
+	player.src="img/play.png";
 });
 
 swahili.addEventListener('click', function() {
@@ -28,6 +29,9 @@ resume.addEventListener('click', function(){
 	}	
 })
 
+exit.addEventListener('click', function(){
+	sounds.pause();
+});
 
 
 function loadData(){
@@ -47,44 +51,40 @@ function loadData(){
 function dataJump(dictionary, language){
 	console.log(dictionary);
 	console.log(language);
+	sounds.src="sound/" + language+ "/"+ dictionary[n].audio;
+	console.log(sounds.src);
+	// function loadAudio(){
+	//     try {
+	// 	    const AudioContext = window.AudioContext || window.webkitAudioContext;
+	// 	    context = new AudioContext();
+	// 	    request = new XMLHttpRequest();
+	// 	    request.open("GET","https://avicndugu.github.io/picture-learner/sound/"+ language +"/" + dictionary[n].audio,true);
+	// 	    request.responseType = "arraybuffer";
 
+	// 	    request.onload = function() {
+	// 	      context.decodeAudioData(request.response, function(buffer) {
+	// 	        source = context.createBufferSource();  
+	// 	        source.buffer = buffer;
+	// 	        source.connect(context.destination);
+	// 	        // auto play
+	// 	        source.start(0); // start was previously noteOn
+	// 	      });
+	//     };
 
-	function loadAudio(){
-	    try {
-	    context = new AudioContext();
-	    request = new XMLHttpRequest();
-	    request.open("GET","https://avicndugu.github.io/picture-learner/sound/"+ language +"/" + dictionary[n].audio,true);
-	    request.responseType = "arraybuffer";
+	//     request.send();
 
-	    request.onload = function() {
-	      context.decodeAudioData(request.response, function(buffer) {
-	        source = context.createBufferSource();  
-	        source.buffer = buffer;
-	        source.connect(context.destination);
-	        // auto play
-	        source.start(0); // start was previously noteOn
-	      });
-	    };
-
-	    request.send();
-
-	    } catch(e) {
-	    alert('web audio api not supported');
-	    }
-	}
-	loadAudio();
-
-
-/*
-
+	//     } catch(e) {
+	//     alert('web audio api not supported');
+	//     }
+	// }
+	// loadAudio();
+/*  NOTES ON THE AUDIO API
+This starts the audio playing
+source.start(0)
+This stops the audio from playing
 source.pause();
 source.currentTime = 0;
-
-
 */
-
-
-
 	// Variable containing the display content
 	const output= `
 		<h2 class="title">${dictionary[n].name}</h2>
@@ -105,6 +105,26 @@ function nextItem(m){
 	}
 	console.log(n);
 }
+
+
+player.addEventListener('click', function(){
+	if(sounds.paused || sounds.ended){
+		sounds.play();
+	}
+	else {
+		sounds.pause();
+	}
+	if (sounds.played){
+		player.src= "img/pause.png";
+	}
+	else if(sound.paused){
+		player.src="img/play.png";
+	}
+	else{
+
+	}
+});
+
 // Next button to nove
 
 
