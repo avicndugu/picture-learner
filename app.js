@@ -51,19 +51,20 @@ function dataJump(dictionary, language){
 
 	function loadAudio(){
 	    try {
-	    context = new AudioContext();
-	    request = new XMLHttpRequest();
-	    request.open("GET","https://avicndugu.github.io/picture-learner/sound/"+ language +"/" + dictionary[n].audio,true);
-	    request.responseType = "arraybuffer";
+		    const AudioContext = window.AudioContext || window.webkitAudioContext;
+		    context = new AudioContext();
+		    request = new XMLHttpRequest();
+		    request.open("GET","https://avicndugu.github.io/picture-learner/sound/"+ language +"/" + dictionary[n].audio,true);
+		    request.responseType = "arraybuffer";
 
-	    request.onload = function() {
-	      context.decodeAudioData(request.response, function(buffer) {
-	        source = context.createBufferSource();  
-	        source.buffer = buffer;
-	        source.connect(context.destination);
-	        // auto play
-	        source.start(0); // start was previously noteOn
-	      });
+		    request.onload = function() {
+		      context.decodeAudioData(request.response, function(buffer) {
+		        source = context.createBufferSource();  
+		        source.buffer = buffer;
+		        source.connect(context.destination);
+		        // auto play
+		        source.start(0); // start was previously noteOn
+		      });
 	    };
 
 	    request.send();
@@ -100,6 +101,9 @@ function nextItem(m){
 	}
 	console.log(n);
 }
+
+
+
 // Next button to nove
 
 
