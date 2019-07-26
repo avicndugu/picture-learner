@@ -73,18 +73,13 @@ function dataJump(dictionary, language){
 	    }
 	}
 	loadAudio();
-
-
-/*
-
+/*  NOTES ON THE AUDIO API
+This starts the audio playing
+source.start(0)
+This stops the audio from playing
 source.pause();
 source.currentTime = 0;
-
-
 */
-
-
-
 	// Variable containing the display content
 	const output= `
 		<h2 class="title">${dictionary[n].name}</h2>
