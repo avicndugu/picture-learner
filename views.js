@@ -10,6 +10,7 @@ const swahili = document.getElementById('swahili');
 const english = document.getElementById('english');
 // document.getElementById('logo').addEventListener('load', firstView);
 exit.addEventListener('click', firstView);
+const resume = document.getElementById("resume");
 console.log(firstSubject.textContent);
 
 
