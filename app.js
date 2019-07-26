@@ -10,6 +10,7 @@ english.addEventListener('click', function() {
 
 next.addEventListener('click', function () {
 	loadData();
+	player.src="img/play.png";
 });
 
 swahili.addEventListener('click', function() {
@@ -28,6 +29,9 @@ resume.addEventListener('click', function(){
 	}	
 })
 
+exit.addEventListener('click', function(){
+	sounds.pause();
+});
 
 
 function loadData(){
@@ -104,9 +108,22 @@ function nextItem(m){
 
 
 player.addEventListener('click', function(){
-	// if 
-	sounds.play();
-})
+	if(sounds.paused || sounds.ended){
+		sounds.play();
+	}
+	else {
+		sounds.pause();
+	}
+	if (sounds.played){
+		player.src= "img/pause.png";
+	}
+	else if(sound.paused){
+		player.src="img/play.png";
+	}
+	else{
+
+	}
+});
 
 // Next button to nove
 
