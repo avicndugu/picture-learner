@@ -31,11 +31,11 @@
 		padding-top: 15px;
 		padding-bottom:15px;
 	}
+	.navbar{
+		display:none;
+	}
 } 
 
-#player{
-	width:50px;
-}
 .play {
 	border-top: 10px solid transparent;
 	border-bottom: 10px solid transparent;
