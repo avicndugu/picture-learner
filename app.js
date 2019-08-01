@@ -65,7 +65,6 @@ source.currentTime = 0;
 		<h2 class="title">${dictionary[n].name}</h2>
 		<img src="img/${dictionary[n].url}">
 		<br>
-		<audio src="sound/${language}/${dictionary[n].audio}"></audio>
 		`;
 	// Insert it into DOM tree
 	document.getElementById('subject').innerHTML= output;
