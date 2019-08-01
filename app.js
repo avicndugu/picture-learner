@@ -8,6 +8,10 @@ english.addEventListener('click', function() {
 	loadData();
 });
 
+back.addEventListener('click', function() {
+	dataJump(dictionary, language);
+})
+
 next.addEventListener('click', function () {
 	loadData();
 });
