@@ -8,6 +8,8 @@ english.addEventListener('click', function() {
 	language="english";
 	n=0;
 	loadData();
+	back.style.display="none";
+
 });
 
 back.addEventListener('click', function() {
@@ -25,6 +27,8 @@ swahili.addEventListener('click', function() {
 	language="swahili";
 	n=0;
 	loadData();
+	back.style.display="none";
+
 });
 
 resume.addEventListener('click', function(){
@@ -72,13 +76,21 @@ source.currentTime = 0;
 }
 function nextItem(m){
 	console.log(m,n);
-
 	if (n<m.length-1){
 		n=n+1;
+		back.style.display="inline-block";
 	}
 	else{
 		next.style.display="none";
 	}
+	if(n>m.length-2){
+	next.style.display="none";
+	}
+	if (n==0){
+		console.log(100);
+	}
+
+	console.log(m.length);
 	console.log(n);
 }
 
@@ -86,14 +98,30 @@ function previousItem(m){
 	console.log(m,n);
 	if (n<1){
 		n=n;
-	} 
-	else if(n<m.length-1){
-		n=n-1;
+		back.style.display="none";
 	}
+	else if(n<=m.length-1){
+		n=n-1;
+		back.style.display="inline-block";
+		next.style.display="inline-block";
+	}
+	// else if(n<m.length-2){
+	//  	console.log(n+100);
+	// 	n=n-1;
+		// next.style.display="inline-block";
+	// }
 	else{
-		next.style.display="none";
+		// next.style.display="none";
+	}
+	// if(n==m.length-1){
+	// 	next.style.display="none";
+	// }
+	if (n==0){
+		console.log(100);
+		back.style.display="none";
 	}
 	console.log(n);
+	console.log(m.length);
 }
 
 player.addEventListener('click', function(){
