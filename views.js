@@ -10,6 +10,8 @@ const swahili = document.getElementById('swahili');
 const english = document.getElementById('english');
 // document.getElementById('logo').addEventListener('load', firstView);
 const resume = document.getElementById("resume");
+const itemHead = document.querySelector("#subject h2");
+const picture= document.querySelector("#subject img");
 const player = document.getElementById("player");
 const sounds = document.getElementById("sounds");
 
