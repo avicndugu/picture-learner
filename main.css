@@ -7,7 +7,6 @@
 }
 
 body, html{
-	/*background-color: #eeeeee;*/
 	height:100vh;
 }
 .containers {
@@ -22,10 +21,6 @@ body, html{
 	margin:20px 20px;
 }
 
-/*#app-container {
-	background:green;
-	width:50%;*/
-/*}*/
 @media only screen and (min-width: 1200px) {
 	#app-container {
 		width:50%;
@@ -33,13 +28,6 @@ body, html{
 		padding-bottom:15px;
 	}
 } 
-/*
-.second-view {
-	display:none;
-}*/
-/*#contribute{
-	display: block;
-}*/
 
 #player{
 	width:50px;
