@@ -1,6 +1,8 @@
 let language;
 let n;
 const next =document.getElementById("first-subject");
+let dictionary;
+let dictionary2;
 
 english.addEventListener('click', function() {
 	language="english";
@@ -9,11 +11,14 @@ english.addEventListener('click', function() {
 });
 
 back.addEventListener('click', function() {
-	dataJump(dictionary, language);
-})
+	previousItem(dictionary);
+	dataFiller(dictionary,language);
+});
 
 next.addEventListener('click', function () {
-	loadData();
+	nextItem(dictionary);
+	dataFiller(dictionary, language);
+	// console.log(dictionary2);
 });
 
 swahili.addEventListener('click', function() {
@@ -28,13 +33,14 @@ resume.addEventListener('click', function(){
 	}
 	else {
 		secondView();
-		loadData();
 	}	
-})
+});
 
 exit.addEventListener('click', function(){
 	sounds.pause();
 });
+
+
 
 
 function loadData(){
@@ -43,17 +49,14 @@ function loadData(){
 	xhr.open('GET',language+'.json', true);
 	xhr.onload= function(){
 		if(this.status===200){
-			console.log(this.responseText);
-			const dictionary=JSON.parse(this.responseText);	
-			dataJump(dictionary, language);
+			dictionary=JSON.parse(this.responseText);	
+			dataFiller(dictionary, language);
 		}
 	}
 	xhr.send();
 }
 
-function dataJump(dictionary, language){
-	console.log(dictionary);
-	console.log(language);
+function dataFiller(dictionary, language){
 	itemHead.textContent = dictionary[n].name;
 	picture.src=`img/${dictionary[n].url}`;
 	sounds.src="sound/" + language+ "/"+ dictionary[n].audio;
@@ -66,9 +69,10 @@ This stops the audio from playing
 source.pause();
 source.currentTime = 0;
 */
-	nextItem(dictionary);
 }
 function nextItem(m){
+	console.log(m,n);
+
 	if (n<m.length-1){
 		n=n+1;
 	}
@@ -78,6 +82,19 @@ function nextItem(m){
 	console.log(n);
 }
 
+function previousItem(m){
+	console.log(m,n);
+	if (n<1){
+		n=n;
+	} 
+	else if(n<m.length-1){
+		n=n-1;
+	}
+	else{
+		next.style.display="none";
+	}
+	console.log(n);
+}
 
 player.addEventListener('click', function(){
 	if(sounds.paused || sounds.ended){
