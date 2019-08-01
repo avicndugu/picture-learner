@@ -50,6 +50,8 @@ function loadData(){
 function dataJump(dictionary, language){
 	console.log(dictionary);
 	console.log(language);
+	itemHead.textContent = dictionary[n].name;
+	picture.src=`img/${dictionary[n].url}`;
 	sounds.src="sound/" + language+ "/"+ dictionary[n].audio;
 	console.log(sounds.src);
 
@@ -60,14 +62,6 @@ This stops the audio from playing
 source.pause();
 source.currentTime = 0;
 */
-	// Variable containing the display content
-	const output= `
-		<h2 class="title">${dictionary[n].name}</h2>
-		<img src="img/${dictionary[n].url}">
-		<br>
-		`;
-	// Insert it into DOM tree
-	document.getElementById('subject').innerHTML= output;
 	nextItem(dictionary);
 }
 function nextItem(m){
