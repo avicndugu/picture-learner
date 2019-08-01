@@ -8,6 +8,7 @@ const exit=document.getElementById('exit');
 const languages=document.getElementById("languages");
 const swahili = document.getElementById('swahili');
 const english = document.getElementById('english');
+const back = document.getElementById("back");
 // document.getElementById('logo').addEventListener('load', firstView);
 const resume = document.getElementById("resume");
 const itemHead = document.querySelector("#subject h2");
