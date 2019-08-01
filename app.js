@@ -10,7 +10,6 @@ english.addEventListener('click', function() {
 
 next.addEventListener('click', function () {
 	loadData();
-	player.src="img/play.png";
 });
 
 swahili.addEventListener('click', function() {

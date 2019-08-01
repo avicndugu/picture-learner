@@ -1,3 +1,4 @@
+
 .container {
 	text-align: center;
 }
@@ -6,15 +7,18 @@
 	/*background-color: #fdfdfd;*/
 }
 
-body, html{
-	height:100vh;
-}
+/*body, html{*/
+	/*height:100vh;*/
+/*}*/
 .containers {
 	padding-bottom:20px;
 
 }
 #header h1 {
 	padding:30px 0;
+}
+#header img {
+	width:50%;
 }
 
 #resume {
