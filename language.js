@@ -8,9 +8,9 @@ console.log(myform)
 document.querySelector('input[type="submit"]').addEventListener('click', function(e) {
     // alert(1);
     e.preventDefault();
-    var dataSend= JSON.stringify(myform.language.value);
+    var data= (myform.language.value);
     // console.log(myform.language.value);
-    console.log(dataSend);
+    console.log(data);
     //     // The data collected from the form and stored in an array
     //     // var data=["ronny", "uou", "yutuyt", "etert", "xersr", "rytryt", "s4esrz", "lutaia", "hitars", "portas"];
         
@@ -26,18 +26,18 @@ document.querySelector('input[type="submit"]').addEventListener('click', functio
     //     // JSON.stringify(myform.language.value);
     //     console.log(newDict);
     //     console.log(myform);
-    //     var url = 'https://script.google.com/macros/s/AKfycbwNHpeIfd5C8nOVBmkbhLw3Y35QPlNAe1zkSQUNIX1ndVNUvyc/exec?'+sentData;
+        var url = 'https://script.google.com/macros/s/AKfycbwNHpeIfd5C8nOVBmkbhLw3Y35QPlNAe1zkSQUNIX1ndVNUvyc/exec?language='+data;
     //     // language='+sentData;
-    //     console.log(url);
+    console.log(url);
 
-    //     const xhr=new XMLHttpRequest();
-    //     xhr.open('GET', url, true);
-    //     // console.log(GET);
-    //     xhr.onload= function() {
-    //         if(this.status===200)
-    //         console.log(this.responseText);
-    //     }
-    //     xhr.send();
+        const xhr=new XMLHttpRequest();
+        xhr.open('GET', url, true);
+        // console.log(GET);
+        xhr.onload= function() {
+            if(this.status===200)
+            console.log(this.responseText);
+        }
+        xhr.send();
 });
 
 
