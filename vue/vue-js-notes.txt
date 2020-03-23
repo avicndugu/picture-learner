@@ -1,0 +1,120 @@
+1. Hello world vue app
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Picture learner</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+      <p>{{ hello }}</p>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                hello: 'Stupid Hello World statement!'
+            }
+        })
+    </script>
+  </body>
+</body>
+</html>
+
+Open console and change the content of the paragraph by
+app.hello="Another hello world statement";
+
+The text magically changes to the new value.
+Vue is reactive.
+
+
+2. install vue locally 
+npm install -g @vue/cli
+
+Anything we will make will be a vue file.
+It will contain:
+<template>
+<script>
+<style>
+
+The data and logic for the component goes in the <script> tag, but only name is required.
+
+
+
+<template>
+  <div id="app" class="small-container">
+    <h1>Employees</h1>
+    <employee-table />
+  </div>
+</template>
+
+<script>
+import EmployeeTable from './components/EmployeeTable.vue'
+
+export default {
+  name: 'App',
+  components: {
+    EmployeeTable
+  }
+}
+</script>
+
+<style>
+  button {
+    background: #009435;
+    border: 1px solid #009435;
+  }
+
+  .small-container {
+    max-width: 680px;
+  }
+</style>
+
+
+
+
+to load data from json
+add 
+
+<tr v-for="item in items" :key="item.id">
+  <td>{{ item.name }}</td>
+  <td>{{ item.url }}</td>
+</tr>
+in ItemView.vue
+<script>
+    export default{
+        name: "item-view",
+        props: {
+            items: Array,
+        }
+    }
+
+</script>
+
+
+add data json in App.vue
+data() {
+    return {
+        items: [
+        {
+          "name":"phone",
+          "url":"phone.png",
+          "audio":"phone.mp3"
+        },
+        {
+          "name":"moon",
+          "url":"moon.png",
+          "audio":"moon.mp3"
+        },
+        {
+          "name":"shoes",
+          "url":"shoes.png",
+          "audio":"shoes.mp3"
+        }
+      ]
+  }
+}
+add in template App.vue
+<item-view :items="items" />

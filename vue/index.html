@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Picture learner</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css" />
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>{{ hello }}</p>
+    </div>
+    <script>
+        const app= new Vue({
+            el: '#app',
+            data: { hello: 'Stupid Hello World statement!' }
+        })
+
+        Vue.component('todo-item', {
+          template: '<li>This is a todo</li>'
+        })
+
+    </script>
+  </body>
+</body>
+</html>
+
