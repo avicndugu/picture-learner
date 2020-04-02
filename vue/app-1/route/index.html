@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="vue.js"></script>
+</head>
+<body>
+   <div id="app">
+   </div>
+<script>
+const NotFound = { template: '<p>Page not found</p>' }
+const Home = { template: 
+                `<div id="start-header">
+                    <h1 id="my-logo" class="title">Picture learner</h1>
+                    <img src="img/explain-img.png">
+                    <h2 class="subtitle">Learn through pictures and sounds</h2>
+                    <div class="button-group" id="languages">
+                    <a href="/item">
+                      <button class="button is-large is-info" id="resume">{{myState}}</button>
+                    </a>
+                  </div>
+                </div>`,
+                data: function() {
+                  return{
+                    count:0,
+                    myState:"Start",
+                  // Use this to call a function that you want to be immediatly run
+                  //  I found this solution after trying to run v-on:load="function" that did not work
+                    created: function () {
+                      this.currentState();
+                    },
+
+                    methods: {
+                      currentState: function(){
+                        (this.count<=0) ? this.myState = 'Start' : this.myState= 'Resume';
+                      }
+                    }
+                  }
+                }
+              }
+const About = { template: '<p>about page</p>' }
+const Item = { template: 
+              ` 
+                <div>
+                    <p class="title">{{items[count].name}}</p>
+                    <img v-bind:src=items[count].url>
+                    <br>
+                    <button class="button" v-on:click="increment">Next</button>
+                    <button class="button" v-on:click="decrement">Back</button>
+                </div>
+              `,
+              data: function() {
+                return{
+                  count:0,
+                  items:
+                  [
+                    {
+                      "name":"phone",
+                      "url":"img/phone.png",
+                      "audio":"phone.mp3"
+                    },
+                    {
+                      "name":"moon",
+                      "url":"img/moon.png",
+                      "audio":"moon.mp3"
+                    },
+                    {
+                      "name":"shoes",
+                      "url":"img/shoes.png",
+                      "audio":"shoes.mp3"
+                    },
+                    {
+                      "name":"socks",
+                      "url":"img/socks.png",
+                      "audio":"socks.mp3"
+                    },
+                    {
+                      "name":"star",
+                      "url":"img/star.png",
+                      "audio":"star.mp3"
+                    },
+                    {
+                      "name":"sun",
+                      "url":"img/sun.png",
+                      "audio":"sun.mp3"
+                    },
+                    {
+                      "name":"bottle",
+                      "url":"img/bottle.png",
+                      "audio":"bottle.mp3"
+                    },
+                    {
+                      "name":"door",
+                      "url":"img/door.png",
+                      "audio":"door.mp3"
+                    },
+                    {
+                      "name":"car",
+                      "url":"img/car.png",
+                      "audio":"car.mp3"
+                    },
+                    {
+                      "name":"cup",
+                      "url":"img/cup.png",
+                      "audio":"cup.mp3"
+                    }
+                  ],
+                  methods: {
+                    increment: function(){
+                      if( this.count<this.items.length-1){
+                        this.count +=1;
+                      }  
+                    },
+                    decrement: function () {
+                      if (this.count>0){
+                        this.count -=1;
+                      }
+                      else{
+                        this.count ==0;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+
+const routes = {
+  '/': Home,
+  '/about': About,
+  '/item': Item
+}
+
+new Vue({
+  el: '#app',
+  data: {
+    currentRoute: window.location.pathname,
+    methods: {
+                    increment: function(){
+                      if( this.count<this.items.length-1){
+                        this.count +=1;
+                      }  
+                    },
+                    decrement: function () {
+                      if (this.count>0){
+                        this.count -=1;
+                      }
+                      else{
+                        this.count ==0;
+                      }
+                    }
+                  }
+  },
+  computed: {
+    ViewComponent () {
+      return routes[this.currentRoute] || NotFound
+    }
+  },
+  render (h) { return h(this.ViewComponent) }
+})
+</script>
+</body>
+</html>

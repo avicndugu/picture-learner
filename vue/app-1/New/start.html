@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app-5">
+      <div id="start-header">
+        <h1 id="my-logo" class="title">Picture learner</h1>
+        <img src="img/explain-img.png">
+        <h2 class="subtitle">Learn through pictures and sounds</h2>
+        <div class="button-group" id="languages">
+        <a href="/items">
+          <button class="button is-large is-info" id="resume">{{myState}}</button>
+        </a>
+      </div>
+    </div>
+  </div>
+<script>
+var app5 = new Vue({
+  el: '#app-5',
+  data: {
+    message: 'Hello Vue.js!',
+    count:0,
+    myState:"",
+  },
+// Use this to call a function that you want to be immediatly run
+//  I found this solution after trying to run v-on:load="function" that did not work
+  created: function () {
+       this.currentState();
+  },
+
+  methods: {
+    currentState: function(){
+      (this.count<=0) ? this.myState = 'Start' : this.myState= 'Resume';
+      // if(this.count<=0){
+      //   this.myState = 'Start'
+      // }
+      // else{
+      //   this.myState= 'Resume'
+      // }
+    }
+  }
+})
+
+app5.$watch('count', function (newValue, oldValue) {
+  // This callback will be called when `vm.a` changes
+  console.log(this.count);
+})
+</script>
+</body>
+</html>

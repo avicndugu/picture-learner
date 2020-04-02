@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>My Vue App</h1>
+        <person-greeter person-name="Travis"></person-greeter>
+        <counter></counter>
+    </div>
+
+    <script>
+        Vue.component('person-greeter', {
+            props: ['person-name'],
+            template: '<h2>Hello, {{ personName }}</h2>',
+        }),
+        Vue.component('counter', {
+            props: ['counting'],
+            counting:0,
+            template: '<button>Hello, {{ counting }}!</button>',
+            created: function () {
+               this.increment();
+            },
+            methods: {
+                increment: function(){
+                    // return "count-ing"='Finger'
+                    // if( this.count<this.items.length-1){
+                    //     this.count +=1;
+                    // }
+                }
+            }
+        })
+        new Vue({
+            el: '#app'
+        });
+    </script>
+</body>
+</html>

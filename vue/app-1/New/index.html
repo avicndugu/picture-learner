@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+</head>
+<body>
+    <div id="app-5">
+
+    <p>{{ message }}</p>
+    <p>{{count}}</p>
+    <button v-on:click="reverseMessage">Reverse Message</button>
+        <button v-on:click="changeTextValue">Change Message</button>
+        <button v-on:click="increment">increment count</button>
+        <button v-on:click="decrement">decrement count</button>
+    </div>
+<script>
+var app5 = new Vue({
+  el: '#app-5',
+  data: {
+    message: 'Hello Vue.js!',
+    count:0,
+  },
+  methods: {
+    changeTextValue: function() {
+      this.message = "A new message"
+    },
+    reverseMessage: function () {
+      this.message = this.message.split('').reverse().join('')
+    },
+    increment: function(){
+    this.count +=1;
+    },
+    decrement: function () {
+        if (this.count>0){
+      this.count -=1;
+    }
+    else{
+      this.count ==0;
+    }
+    }
+  }
+})
+
+var url = "https://en.wikipedia.org/w/api.php"; 
+
+var params = {
+    action: "query",
+    prop: "images",
+    titles: "shoe",
+    format: "json",
+    "formatversion": "2",
+
+};
+
+url = url + "?origin=*";
+Object.keys(params).forEach(function(key){url += "&" + key + "=" + params[key];});
+
+fetch(url)
+    .then(function(response){return response.json();})
+    .then(function(data) {
+        console.log(data);
+        // console.log(response)
+        // var pages = response.query.pages;
+        // var pages = response.query.pages[0].images[1].title;
+        // image_page_url = "https://en.wikipedia.org/wiki/" + pages.split(' ').join('_');
+
+        // console.log(pages)
+        // console.log(image_page_url)
+
+
+        // for (var page in pages) {
+        //     for (var img of pages[page].images) {
+        //         // console.log(img.title);
+        //         const newUrl=img.title.split(' ').join('_');
+        //         // console.log(newUrl);
+        //         // image_page_url = "https://en.wikipedia.org/wiki/" + img.title
+        //         image_page_url = "https://en.wikipedia.org/wiki/" + newUrl
+        //         console.log(image_page_url);
+        //         // return image_page_url;
+        //     }
+        //         return image_page_url;
+        // }
+    })
+    .catch(function(error){console.log(error);});
+
+
+
+// const fetchBill = () => {
+//     const api="https://api.dictionaryapi.dev/api/v1/entries/en/hello";
+//     fetch(api)
+//         .then(response => response.json())
+//         .then((data)=> {
+//             console.log(data);
+//             //console.log(response);
+//             //const results =data;
+//             //console.log(typeof(data));
+//             //console.log(JSON.stringify(data));
+//             displayCartTotal(data);
+//             //return displayCartTotal(data);
+//         })
+//         .catch((error)=>{
+//             console.log(error);
+//         });
+//     }
+// fetchBill();
+</script>
+</body>
+</html>

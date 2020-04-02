@@ -1,0 +1,48 @@
+
+.container {
+	text-align: center;
+}
+
+#app-container {
+	/*background-color: #fdfdfd;*/
+}
+
+/*body, html{*/
+	/*height:100vh;*/
+/*}*/
+.containers {
+	padding-bottom:20px;
+
+}
+#header h1 {
+	padding:30px 0;
+}
+#header img {
+	width:50%;
+}
+
+#resume {
+	margin:20px 20px;
+}
+
+@media only screen and (min-width: 1200px) {
+	#app-container {
+		width:50%;
+		padding-top: 15px;
+		padding-bottom:15px;
+	}
+	.navbar{
+		display:none;
+	}
+} 
+
+.play {
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	border-left: 20px solid black;
+	height: 0px;
+}
+
+#subject img {
+	min-height:150px;
+}

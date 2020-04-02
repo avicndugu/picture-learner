@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pause Play</title>
+</head>
+<body>
+    <audio id="aud">
+        <!-- <source src="media/kitchen.ogg" type="audio/ogg"> -->
+        <!-- <source src="sound/english/bottle.mp3" type="audio/mp3"> -->
+    </audio>
+    <button class="btn btn-sm" id="playPause">Play</button>
+<script type="text/javascript">
+    const playPause = document.getElementById('playPause');
+    const audio = document.getElementById('aud');
+    aud.src="sound/english/bottle.mp3";
+    playPause.addEventListener('click', function(){
+        audio.play();
+        // alert
+    });
+</script>
+</body>
+</html>
